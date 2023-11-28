@@ -8,7 +8,7 @@ To play the Maze Game, follow these steps:
 
 1. **Clone the Repository:**
    ```bash
-   git clone https://github.com/your_username/maze-game.git
+   git clone [https://github.com/your_username/maze-game.git](https://github.com/MutantShakes/Maze_of_Geeks.git)
    ```
 
 2. **Install SDL2:**
