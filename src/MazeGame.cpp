@@ -121,7 +121,7 @@ void MazeGame::generateMaze(int row, int col) {
 void MazeGame::initializePlayer() {
     currentLevel = 1;
     levelPoints=10;
-    points = 300;
+    points = 400;
 
 }
 
@@ -321,7 +321,7 @@ void MazeGame::handleButtonClick(const Button& button) {
 
 void MazeGame::update() {
     if (gameState == GameState::PLAYING) {
-        // Additional game logic can be added here
+        // Space for additional game logic 
     }
 }
 
@@ -373,7 +373,7 @@ void MazeGame::renderPlayText(const std::string& text, int x, int y) {
 void MazeGame::renderHomeScreen() {
     // Render HOME screen content here
       
-        // For simplicity, let's render a message
+       
         renderText("Press SPACE to start", (SCREEN_WIDTH + 50) / 3, (SCREEN_HEIGHT+200) / 2,{255, 255, 255} );
         renderText("Press H for High Scores: ", (SCREEN_WIDTH + 50) / 3, (SCREEN_HEIGHT+300) / 2,{255, 255, 0} );
 
@@ -401,6 +401,8 @@ void MazeGame::renderHomeScreen() {
 }
 
 void MazeGame::renderHighScoreScreen() {
+        renderCustomSizeText("High Scores", SCREEN_WIDTH / 2 - 180, SCREEN_HEIGHT / 8, {255, 255, 0},60);
+
         std::vector<std::pair<int,std::string>> sc_pair;
         for(const auto& entry: database.highScores){
             sc_pair.push_back(std::make_pair(entry.second,entry.first));
@@ -412,12 +414,13 @@ void MazeGame::renderHighScoreScreen() {
         std::string score = std::to_string(j);
         score.append(". ");
         score.append(entry.second);
-        score.append("  --  ");
-        score.append(std::to_string(entry.first));
+        // score.append("  --  ");
+        // score.append(std::to_string(entry.first));
 
         renderText(score, (SCREEN_WIDTH + 50) / 3, (SCREEN_HEIGHT-200+(j*100)) / 3,{255, 255, 255} );
+        renderText(std::to_string(entry.first), (SCREEN_WIDTH + 150) / 2, (SCREEN_HEIGHT-200+(j*100)) / 3,{255, 255, 255} );        
         j++;
-        if(j > 7) break;
+        if(j > 10) break;
     }
 }
 
@@ -429,7 +432,11 @@ void MazeGame::renderGameOverScreen() {
       
         std::string st="Your Score: ";
         st.append(std::to_string(points));
-        renderText(st,(SCREEN_WIDTH + 400) / 4, (SCREEN_HEIGHT) / 3, {255, 0, 0});
+
+        renderCustomSizeText(st, SCREEN_WIDTH / 2 - 210, SCREEN_HEIGHT / 7, {0, 255, 0},60);
+
+
+        // renderText(st,(SCREEN_WIDTH + 400) / 4, (SCREEN_HEIGHT) / 3, {255, 0, 0});
         renderText("Game Over. Press SPACE to restart", SCREEN_WIDTH / 4, (SCREEN_HEIGHT+100) / 3, {255, 255, 255});
         // renderText("Press H for High Scores: ", (SCREEN_WIDTH + 50) / 3, (SCREEN_HEIGHT+300) / 3,{255, 255, 0} );
 }
@@ -437,7 +444,9 @@ void MazeGame::renderGameOverScreen() {
 void MazeGame::renderGameLostScreen(){
     // Render game over screen content here
         // For simplicity, let's render a message
-        renderText("Game Lost !! . Press SPACE to restart", SCREEN_WIDTH / 4, (SCREEN_HEIGHT+100) / 3, {255, 255, 255});
+        renderCustomSizeText("You Lost", SCREEN_WIDTH / 2 - 130, SCREEN_HEIGHT / 7, {255, 0, 0},60);
+
+        renderText("Game Over. Press SPACE to restart", SCREEN_WIDTH / 4, (SCREEN_HEIGHT+100) / 3, {255, 255, 255});
 }
 
 void MazeGame::renderCustomSizeText(const std::string& text, int x, int y, SDL_Color color, int fontSize){
@@ -466,7 +475,7 @@ void MazeGame::renderCustomSizeText(const std::string& text, int x, int y, SDL_C
 }
 
 void MazeGame::renderText(const std::string& text, int x, int y, SDL_Color color) {
-     // For simplicity, let's render text in white
+     
         SDL_Color textColor = color;
         SDL_Surface* surfaceMessage = TTF_RenderText_Solid(font, text.c_str(), textColor);
         SDL_Texture* message = SDL_CreateTextureFromSurface(renderer, surfaceMessage);

@@ -26,7 +26,7 @@ int Database::getScore(const std::string& playerName) const {
         return it->second;
     } else {
         std::cout << "Player not found.\n";
-        return -1; // or some other value to indicate player not found
+        return -1; 
     }
 }
 
