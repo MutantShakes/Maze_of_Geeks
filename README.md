@@ -74,5 +74,6 @@ Follow the official SDL installation guides for each component to ensure they ar
 
 ### Links
 - [Video Demo Link](https://youtu.be/nCwCKKjyVCs)
+- [SDL Documentation](https://www.libsdl.org/release/SDL-1.2.15/docs/html/reference.html)
 
 Have fun playing the Maze Game! If you encounter any issues or have suggestions, feel free to contribute or reach out.
