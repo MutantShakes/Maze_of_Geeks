@@ -72,4 +72,7 @@ Follow the official SDL installation guides for each component to ensure they ar
 - [SDL_ttf Installation Guide](https://libsdl.org/projects/SDL_ttf/)
 - [SDL2_gfx Installation Guide](http://www.ferzkopp.net/wordpress/2016/01/02/sdl_gfx-sdl2_gfx/)
 
+### Links
+- [Video Demo Link](https://youtu.be/nCwCKKjyVCs)
+
 Have fun playing the Maze Game! If you encounter any issues or have suggestions, feel free to contribute or reach out.
