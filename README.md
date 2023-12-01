@@ -34,10 +34,24 @@ To play the Maze Game, follow these steps:
 
 ## Gameplay
 
-- **Green, Dark Green, Purple, Dark Purple, Red Blocks :** These block carry penalities in increasing order as mentioned in the main menu.
-- **Yellow Block (TARGET):** Reach this block to complete the level and advance.
-- **Gray Block (VISITED):** Indicates areas visited in the maze and cannot be visited again.
-- **Black Block:** Indicates the player position and block to be moved by pressing appropriate keys.
+1. **Points and Penalties:** Each level features green, purple, and red blocks. These blocks carry penalties, and your task is to avoid them to prevent point deductions. The penalty for each block type is as follows:
+   - Green Block (P1): 10 points
+   - Dark Green Block (P2): 15 points
+   - Purple Block (P3): 25 points
+   - Dark Purple Block (P4): 35 points
+   - Red Block (P5): 50 points
+
+2. **Points System:** Your initial set of points is 400. Throughout the game, points are deducted based on the encountered blocks. Avoid penalties to preserve your score.
+
+3. **Level Advancement:** Successfully completing a level adds a bonus of 10 points to your score. Keep advancing through the levels to accumulate points.
+
+4. **Game Over Conditions:**
+   - Points Below 0: If, at any point, your points go below 0, you lose the game.
+   - Level 8 Completion: Upon completing the eighth level, your final score is calculated, including bonus points. The game concludes, and your remaining points determine your overall performance.
+
+5. **Bonus Points:** You receive a bonus of 10 points each time you successfully complete a level. Strategically clear each maze to maximize your score.
+
+6. **Challenge:** The difficulty increases with each level. Navigate the mazes wisely to overcome obstacles, avoid penalties, and secure a high score.
 
 ## Menu
 
